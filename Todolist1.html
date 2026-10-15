@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+          body{
+            background-color: rgb(3, 129, 77);
+           }
+    @media screen and (max-width: 480px) {
+ body {
+    background-color: rgb(8, 6, 83);
+    
+  }
+}
+           label{
+            font-family: 'Times New Roman', Times, serif; 
+            font-weight: bold;
+            font-size: x-large;
+            color: rgb(242, 243, 237);
+            text-align: center;
+           }
+       input[type=text]{
+        width: 25%;
+        padding: 12px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 2px solid rgb(4, 231, 220);
+        border-radius: 8px;
+        background-color: rgb(180, 252, 173);
+        color: rgb(3, 71, 49);
+        font-size: x-large;
+        text-align: center;
+       }
+       li{
+        font-family: 'Times New Roman', Times, serif; 
+            font-weight: bold;
+            font-size: x-large;
+            color: rgb(214, 235, 121);
+       }
+       button{
+         font-family: 'Times New Roman', Times, serif; 
+            font-weight: bold;
+            font-size: x-large;
+            color: rgb(214, 235, 121);
+             background-color: rgb(6, 54, 2); 
+             border: 2px solid rgb(6, 54, 2);
+        border-radius: 8px;
+       
+       }
+ 
+    </style>
+</head>
+<body>
+   
+            <label for="task">Enter your Task</label>
+       <input type="text" id="input1">
+       <button onclick="add()">Add</button>
+       </div>
+       <ul id="list-container">
+        <li>Ex: I Will Go To....
+            <button onclick="deleteItem(event)">Delete</button>
+        </li>
+       </ul>
+       
+        <script>
+            var ul=document.getElementById("list-container")
+            var input2 = document.getElementById("input1")
+            function add()
+            {
+               var listitem = document.createElement("li")
+               listitem.innerHTML=input2.value + "<button onclick='deleteItem(event)'>Delete</button>"
+               ul.append(listitem)
+            }
+            function deleteItem(event)
+            {
+                event.target.parentElement.remove()
+            }
+
+        </script>
+     
+</body>
+</html>
